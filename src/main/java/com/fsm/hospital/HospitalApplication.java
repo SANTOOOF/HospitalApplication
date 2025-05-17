@@ -28,7 +28,7 @@ public class HospitalApplication {
 							MedecinRepository medecinRepository, RendezVousRepository rendezVousRepository,
 							ConsultationRepository consultationRepository) {
 		return args -> {
-			Stream.of("Mohamed", "Hassan", "Najat")
+			Stream.of("youssef", "zakaria", "achraf")
 					.forEach(name -> {
 						Patient patient = new Patient();
 						patient.setNom(name);
@@ -36,12 +36,12 @@ public class HospitalApplication {
 						patient.setMalade(false);
 						hospitalService.savePatient(patient);
 					});
-			Stream.of("Yassmine", "Amin", "Nour")
+			Stream.of("hanan", "Amin", "hayat")
 					.forEach(name -> {
 						Medecin medecin = new Medecin();
 						medecin.setNom(name);
 						medecin.setEmail(name+"_medecin@emailcom");
-						medecin.setSpecialite(Math.random()>0.5?"Cardio":"Dentiste"); // Ajout recommandé
+						medecin.setSpecialite(Math.random()>0.5?"Cardio":"Dentiste");
 						hospitalService.saveMedecin(medecin);
 					});
 

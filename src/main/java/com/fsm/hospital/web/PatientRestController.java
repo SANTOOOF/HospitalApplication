@@ -26,14 +26,14 @@ public class PatientRestController {
         return patientRepository.findAll();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/patient/{id}")
     public Patient getPatient(@PathVariable Long id) {
         return patientRepository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(
                         HttpStatus.NOT_FOUND, "Patient non trouvé"));
     }
 
-    @PostMapping("/add")
+    @PostMapping("/addPatient")
     @ResponseStatus(HttpStatus.CREATED)
     public Patient add(@RequestParam String nom, @RequestParam boolean malade, @RequestParam int score) {
         Patient p = new Patient();
@@ -47,11 +47,11 @@ public class PatientRestController {
     }
 
 
-    @GetMapping("/search")
+    @GetMapping("/searchPatient")
     public Patient search(@RequestParam String nom) {
         return hospitalService.findByNom(nom);
     }
-    @PutMapping("/update/{id}")
+    @PutMapping("/updatePatient/{id}")
     public Patient update(@PathVariable Long id, @RequestParam String nom, @RequestParam boolean malade, @RequestParam int score) {
 
         Patient exist = hospitalService.getPatientById(id)
