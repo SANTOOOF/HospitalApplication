@@ -325,3 +325,7 @@ Le système implémente les relations d'entités suivantes :
 Ces relations sont gérées par des annotations JPA dans les classes d'entités, assurant l'intégrité des données et un mappage d'objets approprié.
 
 ## Resultat
+
+![Screenshot 2025-05-18 012353](https://github.com/user-attachments/assets/e3da2f22-7855-4a0d-a02d-d372880f70dc)
+
+
