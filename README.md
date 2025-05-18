@@ -326,5 +326,10 @@ Ces relations sont gérées par des annotations JPA dans les classes d'entités,
 
 ## Resultat
 
+![Screenshot 2025-05-18 012353](https://github.com/user-attachments/assets/c0681ebe-69de-4ff4-88ce-e12d9eeafd48)
+
+![Screenshot 2025-05-18 160146](https://github.com/user-attachments/assets/02543a5a-6c5c-4949-9175-ac0e6d4fa072)
+
+![Screenshot 2025-05-18 160245](https://github.com/user-attachments/assets/bb99ba96-4f4f-4423-863c-7402854445c8)
 
 
