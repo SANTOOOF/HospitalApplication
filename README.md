@@ -1,4 +1,4 @@
-![Screenshot 2025-05-18 161852](https://github.com/user-attachments/assets/799252c2-b7be-4ab4-b3f1-bce1a3cc0161)# Système de Gestion Hospitalière
+# Système de Gestion Hospitalière
 
 ## Aperçu
 
@@ -355,3 +355,5 @@ Ces relations sont gérées par des annotations JPA dans les classes d'entités,
 ![Screenshot 2025-05-18 162745](https://github.com/user-attachments/assets/6827c227-a9ad-4eb7-b1d3-464e76ea8539)
 
 ![Screenshot 2025-05-18 162822](https://github.com/user-attachments/assets/fb9e88dc-6f09-4450-a815-f83573662628)
+
+![Screenshot 2025-05-18 161852](https://github.com/user-attachments/assets/799252c2-b7be-4ab4-b3f1-bce1a3cc0161)
