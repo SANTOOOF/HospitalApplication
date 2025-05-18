@@ -1,4 +1,4 @@
-# Système de Gestion Hospitalière
+![Screenshot 2025-05-18 161852](https://github.com/user-attachments/assets/799252c2-b7be-4ab4-b3f1-bce1a3cc0161)# Système de Gestion Hospitalière
 
 ## Aperçu
 
@@ -332,6 +332,26 @@ Ces relations sont gérées par des annotations JPA dans les classes d'entités,
 
 ![Screenshot 2025-05-18 160245](https://github.com/user-attachments/assets/bb99ba96-4f4f-4423-863c-7402854445c8)
 
-## LES REQUETTE AVEC POSTMAN
+## LES REQUÊTES AVEC POSTMAN
 
+![Screenshot 2025-05-18 161809](https://github.com/user-attachments/assets/cea860cc-7ec8-495b-bd3a-a57e99982b88)
 
+![Screenshot 2025-05-18 161723](https://github.com/user-attachments/assets/c71bc8cd-06ba-407d-9821-385c4fd2b803)
+
+![Screenshot 2025-05-18 161852](https://github.com/user-attachments/assets/d37439d6-6c41-4983-9bc2-e454b6a25af3)
+
+![Screenshot 2025-05-18 161929](https://github.com/user-attachments/assets/0430e485-ee57-429f-a1c5-b4e06a4451db)
+
+![Screenshot 2025-05-18 162513](https://github.com/user-attachments/assets/cc02a9e7-e801-4d25-bf4d-226406bdefb7)
+
+![Screenshot 2025-05-18 162542](https://github.com/user-attachments/assets/9768fbd2-fd41-4349-a85f-a1671f335d88)
+
+![Screenshot 2025-05-18 162606](https://github.com/user-attachments/assets/b4de2d75-a64e-43c4-ac8a-020edb744c29)
+
+![Screenshot 2025-05-18 162636](https://github.com/user-attachments/assets/ea4bd864-1ba3-4a9b-866a-13245d24a8f9)
+
+![Screenshot 2025-05-18 162705](https://github.com/user-attachments/assets/ee78f701-dbac-4fc9-a64e-704966cafeda)
+
+![Screenshot 2025-05-18 162745](https://github.com/user-attachments/assets/6827c227-a9ad-4eb7-b1d3-464e76ea8539)
+
+![Screenshot 2025-05-18 162822](https://github.com/user-attachments/assets/fb9e88dc-6f09-4450-a815-f83573662628)
