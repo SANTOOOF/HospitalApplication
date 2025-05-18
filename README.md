@@ -1,19 +1,19 @@
-# Hospital Management System
+# Système de Gestion Hospitalière
 
-## Overview
+## Aperçu
 
-This is a Spring Boot application designed to manage hospital operations, including patient records, doctor information, appointments, and consultations. The system provides a comprehensive solution for healthcare facilities to digitize and streamline their administrative processes. It implements a complete backend with RESTful APIs that can be integrated with any frontend technology.
+Cette application Spring Boot est conçue pour gérer les opérations hospitalières, notamment les dossiers des patients, les informations sur les médecins, les rendez-vous et les consultations. Le système offre une solution complète permettant aux établissements de santé de numériser et de rationaliser leurs processus administratifs. Il implémente un backend complet avec des API RESTful qui peuvent être intégrées à n'importe quelle technologie frontend.
 
-## Features
+## Fonctionnalités
 
-The Hospital Management System offers several key features to facilitate hospital operations. It allows for the management of patient records with details such as name, date of birth, and health status. Doctors can be registered in the system with their specialties and contact information. The appointment scheduling feature enables coordination between patients and doctors, with each appointment having a specific status (pending, canceled, or completed). Additionally, the system supports recording consultation details, including date and medical reports.
+Le Système de Gestion Hospitalière propose plusieurs fonctionnalités clés pour faciliter les opérations hospitalières. Il permet la gestion des dossiers patients avec des détails tels que le nom, la date de naissance et l'état de santé. Les médecins peuvent être enregistrés dans le système avec leurs spécialités et leurs coordonnées. La fonctionnalité de planification des rendez-vous permet la coordination entre les patients et les médecins, chaque rendez-vous ayant un statut spécifique (en attente, annulé ou terminé). De plus, le système prend en charge l'enregistrement des détails de consultation, y compris la date et les rapports médicaux.
 
-## Project Structure
+## Structure du Projet
 
-The application follows a standard Spring Boot architecture with clear separation of concerns:
+L'application suit une architecture Spring Boot standard avec une séparation claire des préoccupations :
 
-### Entity Classes
-The core domain objects that represent the data model:
+### Classes d'Entités
+Les objets de domaine principaux qui représentent le modèle de données :
 
 **Patient.java**
 ```java
@@ -84,8 +84,8 @@ public class Consultation {
 }
 ```
 
-### Repository Interfaces
-Extend JpaRepository to provide data access capabilities:
+### Interfaces de Repositories
+Étendent JpaRepository pour fournir des capacités d'accès aux données :
 
 **PatientRepository.java**
 ```java
@@ -101,8 +101,8 @@ public interface MedecinRepository extends JpaRepository<Medecin,Long> {
 }
 ```
 
-### Service Layer
-Implements business logic:
+### Couche de Service
+Implémente la logique métier :
 
 **IHospitalService.java (Interface)**
 ```java
@@ -121,7 +121,7 @@ public interface IHospitalService {
 }
 ```
 
-**HospitalServiceImpl.java (Implementation)**
+**HospitalServiceImpl.java (Implémentation)**
 ```java
 @Service
 @Transactional
@@ -131,7 +131,7 @@ public class HospitalServiceImpl implements IHospitalService {
     private RendezVousRepository rendezVousRepository;
     private ConsultationRepository consultationRepository;
 
-    // Constructor injection
+    // Injection par constructeur
     public HospitalServiceImpl(PatientRepository patientRepository, 
                               MedecinRepository medecinRepository,
                               RendezVousRepository rendezVousRepository, 
@@ -148,12 +148,12 @@ public class HospitalServiceImpl implements IHospitalService {
         return rendezVousRepository.save(rendezVous);
     }
     
-    // Other service methods implementation...
+    // Implémentation des autres méthodes de service...
 }
 ```
 
-### Controller Classes
-Expose RESTful APIs:
+### Classes de Contrôleurs
+Exposent les API RESTful :
 
 **PatientRestController.java**
 ```java
@@ -191,60 +191,60 @@ public class PatientRestController {
         return hospitalService.savePatient(p);
     }
     
-    // Other controller methods...
+    // Autres méthodes du contrôleur...
 }
 ```
 
-## Technical Stack
+## Stack Technique
 
 - Java
 - Spring Boot
 - Spring Data JPA
-- MySQL Database
-- RESTful API
-- Maven (build tool)
-- Lombok (reduces boilerplate code)
+- Base de données MySQL
+- API RESTful
+- Maven (outil de build)
+- Lombok (réduit le code répétitif)
 
-## Setup Instructions
+## Instructions d'Installation
 
-1. Ensure you have Java 17+ and Maven installed on your system.
-2. Configure MySQL database (port 3308) with username 'root' and no password, or update the application.properties file with your database credentials.
-3. Clone the repository to your local machine.
-4. Navigate to the project directory and run `mvn clean install` to build the project.
-5. Start the application using `mvn spring-boot:run` or by executing the generated JAR file.
-6. The application will be accessible at http://localhost:8080.
+1. Assurez-vous d'avoir Java 17+ et Maven installés sur votre système.
+2. Configurez la base de données MySQL (port 3308) avec le nom d'utilisateur 'root' et sans mot de passe, ou mettez à jour le fichier application.properties avec vos identifiants de base de données.
+3. Clonez le dépôt sur votre machine locale.
+4. Naviguez vers le répertoire du projet et exécutez `mvn clean install` pour construire le projet.
+5. Démarrez l'application en utilisant `mvn spring-boot:run` ou en exécutant le fichier JAR généré.
+6. L'application sera accessible à l'adresse http://localhost:8080.
 
-## API Endpoints
+## Points de Terminaison API
 
-The system provides several REST endpoints for managing hospital data:
+Le système fournit plusieurs points de terminaison REST pour gérer les données hospitalières :
 
-### Patient Management
-- `GET /patients` - Retrieve all patients
-- `GET /patient/{id}` - Get a specific patient by ID
-- `POST /addPatient` - Add a new patient
+### Gestion des Patients
+- `GET /patients` - Récupérer tous les patients
+- `GET /patient/{id}` - Obtenir un patient spécifique par ID
+- `POST /addPatient` - Ajouter un nouveau patient
   ```
-  Parameters:
-  - nom: String (patient name)
-  - malade: boolean (illness status)
-  - score: int (health score)
+  Paramètres :
+  - nom : String (nom du patient)
+  - malade : boolean (statut de maladie)
+  - score : int (score de santé)
   ```
-- `GET /searchPatient` - Search for a patient by name
+- `GET /searchPatient` - Rechercher un patient par nom
   ```
-  Parameters:
-  - nom: String (patient name to search)
+  Paramètres :
+  - nom : String (nom du patient à rechercher)
   ```
-- `PUT /updatePatient/{id}` - Update patient information
+- `PUT /updatePatient/{id}` - Mettre à jour les informations du patient
   ```
-  Parameters:
-  - nom: String (updated name)
-  - malade: boolean (updated illness status)
-  - score: int (updated health score)
+  Paramètres :
+  - nom : String (nom mis à jour)
+  - malade : boolean (statut de maladie mis à jour)
+  - score : int (score de santé mis à jour)
   ```
-- `DELETE /delete/{id}` - Remove a patient from the system
+- `DELETE /delete/{id}` - Supprimer un patient du système
 
-## Database Configuration
+## Configuration de la Base de Données
 
-The application is configured to connect to a MySQL database named HOSPITAL_DB. If the database does not exist, it will be created automatically. The application uses Hibernate to manage the database schema, with the property spring.jpa.hibernate.ddl-auto set to "create" to generate the schema on startup.
+L'application est configurée pour se connecter à une base de données MySQL nommée HOSPITAL_DB. Si la base de données n'existe pas, elle sera créée automatiquement. L'application utilise Hibernate pour gérer le schéma de la base de données, avec la propriété spring.jpa.hibernate.ddl-auto définie sur "create" pour générer le schéma au démarrage.
 
 **application.properties**
 ```properties
@@ -259,11 +259,11 @@ spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
 spring.jpa.show-sql=true
 ```
 
-## Development
+## Développement
 
-The project includes sample data initialization in the HospitalApplication class, which creates test patients, doctors, appointments, and consultations when the application starts. This feature is useful for development and testing purposes.
+Le projet inclut l'initialisation de données d'exemple dans la classe HospitalApplication, qui crée des patients, des médecins, des rendez-vous et des consultations de test au démarrage de l'application. Cette fonctionnalité est utile à des fins de développement et de test.
 
-**Sample Data Initialization**
+**Initialisation des Données d'Exemple**
 ```java
 @Bean
 CommandLineRunner start(IHospitalService hospitalService, 
@@ -272,7 +272,7 @@ CommandLineRunner start(IHospitalService hospitalService,
                        RendezVousRepository rendezVousRepository,
                        ConsultationRepository consultationRepository) {
     return args -> {
-        // Create sample patients
+        // Créer des patients d'exemple
         Stream.of("Mohamed", "Hassan", "Najat")
                 .forEach(name -> {
                     Patient patient = new Patient();
@@ -282,7 +282,7 @@ CommandLineRunner start(IHospitalService hospitalService,
                     hospitalService.savePatient(patient);
                 });
         
-        // Create sample doctors
+        // Créer des médecins d'exemple
         Stream.of("Yassmine", "Amin", "Nour")
                 .forEach(name -> {
                     Medecin medecin = new Medecin();
@@ -292,7 +292,7 @@ CommandLineRunner start(IHospitalService hospitalService,
                     hospitalService.saveMedecin(medecin);
                 });
 
-        // Create a sample appointment
+        // Créer un rendez-vous d'exemple
         Patient patient = patientRepository.findById(1L).orElse(null);
         Medecin medecin = medecinRepository.findByNom("Yassmine");
         
@@ -304,7 +304,7 @@ CommandLineRunner start(IHospitalService hospitalService,
         
         RendezVous savedRDV = hospitalService.saveRDV(rendezVous);
         
-        // Create a sample consultation
+        // Créer une consultation d'exemple
         Consultation consultation = new Consultation();
         consultation.setDateConsultation(new Date());
         consultation.setRendezVous(savedRDV);
@@ -314,15 +314,14 @@ CommandLineRunner start(IHospitalService hospitalService,
 }
 ```
 
-## Entity Relationships
+## Relations entre Entités
 
-The system implements the following entity relationships:
+Le système implémente les relations d'entités suivantes :
 
-1. **Patient to RendezVous**: One-to-Many (One patient can have multiple appointments)
-2. **Medecin to RendezVous**: One-to-Many (One doctor can have multiple appointments)
-3. **RendezVous to Consultation**: One-to-One (Each appointment can have one consultation)
+1. **Patient à RendezVous** : One-to-Many (Un patient peut avoir plusieurs rendez-vous)
+2. **Medecin à RendezVous** : One-to-Many (Un médecin peut avoir plusieurs rendez-vous)
+3. **RendezVous à Consultation** : One-to-One (Chaque rendez-vous peut avoir une consultation)
 
-These relationships are managed through JPA annotations in the entity classes, ensuring data integrity and proper object mapping.
+Ces relations sont gérées par des annotations JPA dans les classes d'entités, assurant l'intégrité des données et un mappage d'objets approprié.
 
-## resultat
-
+## Resultat
